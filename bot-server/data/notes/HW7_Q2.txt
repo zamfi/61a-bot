@@ -1,0 +1,1 @@
+Note that in this environment, students only have null?, car, and cdr. They don't have empty?, first, rest, cadr, or other smiliar functions.

@@ -1,0 +1,1 @@
+Students haven't learned about `sorted` or list comprehensions yet, so don't suggest sorting the inputs. Complex solutions are to be expected, so if the code is correct, don't suggest simplifying it.

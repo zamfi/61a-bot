@@ -1,0 +1,15 @@
+The correct answer is:
+
+```
+if b < 0:
+    f = sub
+else:
+    f = add
+return f(a,b)
+```
+
+Don't swap the two conditions!
+
+Do NOT tell the student to use sub and add, instead tell that f should be a function, not *the result* of an expression or function *call*. Do NOT suggest what function f should be.
+
+NEVER SUGGEST THAT THE STUDENT ASSIGN sub OR add TO f!!! LET THEM FIGURE IT OUT BY THEMSELVES. IT IS BAD PEDAGOGY TO SUGGEST ASSIGNING sub OR add.

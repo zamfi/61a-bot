@@ -1,0 +1,96 @@
+{
+  "name": "61a-bot",
+  "displayName": "61A Bot",
+  "description": "Support for CS 61A",
+  "publisher": "UC Berkeley CS 61A Team",
+  "version": "0.0.6",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "icon": "logo-small.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "61a-bot.getHelp",
+        "title": "Get 61A Help",
+        "enablement": "!61a-bot.isGettingHelp"
+      }
+    ],
+    "languages": [
+      {
+        "id": "python",
+        "extensions": [
+          ".py"
+        ]
+      },
+      {
+        "id": "scheme",
+        "extensions": [
+          ".scm"
+        ]
+      },
+      {
+        "id": "sql",
+        "extensions": [
+          ".sql"
+        ]
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceFilename =~ /hw\\d\\d\\.(py|scm|sql)$/",
+          "command": "61a-bot.getHelp",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "61A Bot",
+      "properties": {
+        "61a-bot.email": {
+          "type": "string",
+          "default": "",
+          "format": "email",
+          "markdownDescription": "Identify yourself to this extension."
+        },
+        "61a-bot.researchConsent": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Allow this extension to securely collect your data for a research study directed by Prof. XYZ (a faculty member unaffiliated with this course). Your consent is voluntary, and does not affect your ability to use this extension, nor your course grade.\n\nIf you consent, any code submitted with a help request will be de-identified from any personal information, like email address, and securely saved in a research data repository. This data will be used to improve the extension and to study how students use automated assistance in learning programming. The data will be stored securely and will not be shared with anyone outside of the research team. You may withdraw your consent at any time by disabling this option.\n\nFor more information visit [https://cs61a.org/articles/61a-bot/](https://cs61a.org/articles/61a-bot/)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

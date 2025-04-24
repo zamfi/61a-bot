@@ -1,0 +1,15 @@
+Note that in this environment, students only have null?, car, and cdr. They don't have empty?, first, rest, cadr, or other smiliar functions.
+
+Syntax note: consequent and alternative (if and else) branches of an if can appear on the same line. For example, this is a correct solution:
+```scheme
+(define (ascending? lst)
+    (if (null? lst) #t
+            (if (null? (cdr lst)) #t
+                (if (<= (car lst)(car (cdr lst)))
+                    (ascending? (cdr lst)) #f
+                )
+            )
+        )
+    )
+```
+...note that the consequent recursive call `(ascending? (cdr lst))` and the alternate `#f` are on the same line. This is correct.

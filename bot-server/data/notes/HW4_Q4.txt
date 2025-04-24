@@ -1,0 +1,1 @@
+Don't forget to check for the len(word) == 1 base case! The assert should not move from the orginal position.

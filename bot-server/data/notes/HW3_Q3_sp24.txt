@@ -1,0 +1,9 @@
+This is a very tricky problem. In the recursive case, the code should consider two alternatives: using the current coin and subtracting its value from the remaining change, or skipping the current coin (using the current remaining change) but then moving on to the next largest (or smallest) coin.
+
+In other words, something like:
+
+```
+with_coin = helper(change - coin, coin)
+without_coin = helper(change, next_coin(coin))
+return with_coin + without_coin
+```

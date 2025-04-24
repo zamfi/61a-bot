@@ -1,0 +1,13 @@
+IMPORTANT:
+1) This assignment uses sqlite3, which has a specific SQL syntax. 
+2) Implicit joins (without the JOIN keyword) are totally fine. 
+3) Note that when joined on `parent = name`, ordering by height necessarily uses the parent height because the dog data in the row is the parent dog's data.
+4) Also note that when joined on `parent = name`, only those rows corresponding to dogs with parents are actually included.
+5) ORDER BY works even if the column isn't ultimately selected.
+
+Here's a correct solution:
+
+```sql
+CREATE TABLE by_parent_height AS
+  SELECT child FROM parents, dogs WHERE name = parent ORDER BY height DESC;
+```

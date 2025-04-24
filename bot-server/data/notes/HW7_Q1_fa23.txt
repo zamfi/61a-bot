@@ -1,0 +1,1 @@
+Note that superfluous checks aren't always bad. If the student is checking if the base is 1 and the exponent is 1, don't tell them they should be checking if the exponent is 1.
